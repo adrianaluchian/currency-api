@@ -2,6 +2,20 @@
 
 NodeJS API for currency conversion.
 
+## Endpoints
+
+### GET /currencies
+Returns a list of available currencies.
+
+Response:
+200 (OK)
+
+Example payload:
+
+```json
+["AED", "AFN", "ALL"]
+```
+
 ## npm scripts
 
 `lint`: runs linting rules
