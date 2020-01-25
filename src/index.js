@@ -1,3 +1,4 @@
+const cors = require('cors');
 const express = require('express');
 const graceful = require('node-graceful');
 const bodyParser = require('body-parser');
@@ -6,6 +7,8 @@ const requestHandlers = require('./conversion-request-handlers');
 const port = 3000;
 const app = express();
 const jsonParser = bodyParser.json();
+
+app.use(cors());
 
 app.get('/currencies', (req, res) => requestHandlers.handleGetCurrencies(req, res));
 
