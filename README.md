@@ -51,7 +51,7 @@ Response:
 
 `docker build . -api`
 
-`docker run -p -d 8001:3000 api`
+`docker run -p -d 8001:80 api`
 
 The API will be accessible at http://localhost:8001
 
