@@ -49,4 +49,25 @@ describe('conversion-service', () => {
     });
   });
 
+  describe('when isSupportedCurrency is called', () => {
+    const testData = [
+      { value: null, expectedResult: false },
+      { value: 'X', expectedResult: false },
+      { value: 'eur', expectedResult: false },
+      { value: 'EUR', expectedResult: true }
+    ];
+
+    testData.forEach(({ value, expectedResult }) => {
+      describe(`with value=${value}`, () => {
+        beforeEach(() => {
+          result = sut.isSupportedCurrency(value);
+        });
+
+        it(`should return ${expectedResult}`, () => {
+          expect(result).toBe(expectedResult);
+        });
+      });
+    });
+  });
+
 });

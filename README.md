@@ -27,7 +27,6 @@ Request:
 ```
 
 Response:
-
 200 (OK)
 
 ```json
@@ -37,6 +36,8 @@ Response:
 ```
 
 500 (Internal Server Error)
+
+400 (Bad Request)
 
 ## npm scripts
 

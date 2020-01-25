@@ -26,7 +26,7 @@
   },
   "eslintConfig": {
     "env": {
-      "node": 1,
+      "node": true,
       "jest": true,
       "es6": true
     },

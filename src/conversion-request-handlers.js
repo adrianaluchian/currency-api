@@ -1,4 +1,5 @@
 const conversionService = require('./conversion-service');
+const conversionRequestValidation = require('./conversion-request-validation');
 
 function handleGetCurrencies (req, res) {
   try {
@@ -13,13 +14,18 @@ function handleGetCurrencies (req, res) {
 
 function handlePostConvert (req, res) {
   try {
-    const { from, to, value } = req.body;
-    const convertedValue = conversionService.convert({ from, to, value });
+    const payload = req.body;
 
-    res.send({
-      convertedValue
-    });
+    const errors = conversionRequestValidation.validatePostCovertPayload(payload);
 
+    if (errors && errors.length) {
+      res.status(400).send(errors);
+      return;
+    }
+
+    const convertedValue = conversionService.convert(payload);
+
+    res.send({ convertedValue });
   } catch (error) {
     console.log('Error converting value', error);
 

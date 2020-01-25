@@ -4,6 +4,10 @@ function getCurrencies () {
   return Object.keys(conversionRateCatalog.rates || []);
 }
 
+function isSupportedCurrency (currency) {
+  return !!(conversionRateCatalog.rates || [])[currency];
+}
+
 function convert ({ from, to, value } = {}) {
   const rateSourceCurrency = conversionRateCatalog.rates[from] || 0;
   const rateDestinationCurrency = conversionRateCatalog.rates[to] || 0;
@@ -20,5 +24,6 @@ function convert ({ from, to, value } = {}) {
 
 module.exports = {
   getCurrencies,
-  convert
+  convert,
+  isSupportedCurrency
 };
