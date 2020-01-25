@@ -8,13 +8,35 @@ NodeJS API for currency conversion.
 Returns a list of available currencies.
 
 Response:
-200 (OK)
 
-Example payload:
+200 (OK)
 
 ```json
 ["AED", "AFN", "ALL"]
 ```
+### POST /currencies/convert
+Converts the provided value to the desired currency.
+
+Request:
+```json
+{
+  "from": "EUR",
+  "to": "YEN",
+  "value": 5
+}
+```
+
+Response:
+
+200 (OK)
+
+```json
+{
+  "convertedValue": 492.93
+}
+```
+
+500 (Internal Server Error)
 
 ## npm scripts
 
