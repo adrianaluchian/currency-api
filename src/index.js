@@ -14,6 +14,7 @@ app.get('/currencies', (req, res) => requestHandlers.handleGetCurrencies(req, re
 
 app.post('/currencies/convert', jsonParser, (req, res) => requestHandlers.handlePostConvert(req, res));
 
+// eslint-disable-next-line no-console
 const server = app.listen(port, () => console.log(`Server listening on port ${port}`));
 
 graceful.on('exit', () => {
@@ -22,7 +23,7 @@ graceful.on('exit', () => {
       if (error) {
         return reject(error);
       }
-      resolve();
+      return resolve();
     });
   });
 });

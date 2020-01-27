@@ -33,7 +33,7 @@ describe('conversion-service', () => {
       { from: 'USD', to: 'USD', value: 5, expectedResult: 5 },
       { from: 'EUR', to: 'USD', value: 5, expectedResult: 4.53 },
       { from: 'USD', to: 'EUR', value: 5, expectedResult: 5.51 },
-      { from: 'EUR', to: 'YEN', value: 5, expectedResult: 492.93 },
+      { from: 'EUR', to: 'YEN', value: 5, expectedResult: 492.93 }
     ];
 
     testData.forEach(({ from, to, value, expectedResult }) => {

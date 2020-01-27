@@ -15,34 +15,20 @@
     "type": "git",
     "url": "git+https://github.com/aluchian/currency-api.git"
   },
-  "devDependencies": {
-    "eslint": "~6.8.0",
-    "jest": "~25.1.0",
-    "nodemon": "~2.0.2",
-    "watch": "~1.0.2"
-  },
-  "jest": {
-    "rootDir": "src"
-  },
-  "eslintConfig": {
-    "env": {
-      "node": true,
-      "jest": true,
-      "es6": true
-    },
-    "extends": "eslint:recommended",
-    "parserOptions": {
-      "ecmaVersion": 8,
-      "sourceType": "module"
-    },
-    "ignorePatterns": [
-      "node_modules/"
-    ]
-  },
   "dependencies": {
     "body-parser": "~1.19.0",
     "cors": "~2.8.5",
     "express": "~4.17.1",
     "node-graceful": "~3.0.0"
+  },
+  "devDependencies": {
+    "babel-eslint": "~10.0.3",
+    "eslint": "~6.8.0",
+    "eslint-plugin-import": "~2.20.0",
+    "eslint-plugin-no-only-tests": "~2.4.0",
+    "eslint-plugin-promise": "~4.2.1",
+    "jest": "~25.1.0",
+    "nodemon": "~2.0.2",
+    "watch": "~1.0.2"
   }
 }

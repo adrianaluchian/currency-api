@@ -1,6 +1,6 @@
 const conversionService = require('./conversion-service');
 
-function validatePostCovertPayload ({ from, to, value } = {}) {
+function validatePostCovertPayload({ from, to, value } = {}) {
   const errors = [];
 
   if (!conversionService.isSupportedCurrency(from)) {

@@ -21,7 +21,7 @@ describe('conversion-request-validation', () => {
         expectedResult = [
           '\'X\' is not a supported currency.',
           '\'Y\' is not a supported currency.',
-          '\'a\' is not a number.',
+          '\'a\' is not a number.'
         ];
 
         jest

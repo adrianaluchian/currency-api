@@ -1,14 +1,14 @@
 const conversionRateCatalog = require('./conversion-rate-catalog.json');
 
-function getCurrencies () {
+function getCurrencies() {
   return Object.keys(conversionRateCatalog.rates || []);
 }
 
-function isSupportedCurrency (currency) {
+function isSupportedCurrency(currency) {
   return !!(conversionRateCatalog.rates || [])[currency];
 }
 
-function convert ({ from, to, value } = {}) {
+function convert({ from, to, value } = {}) {
   const rateSourceCurrency = conversionRateCatalog.rates[from] || 0;
   const rateDestinationCurrency = conversionRateCatalog.rates[to] || 0;
 
