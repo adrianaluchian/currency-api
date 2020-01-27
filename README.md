@@ -39,15 +39,17 @@ Response:
 
 400 (Bad Request)
 
-## npm scripts
+## Development setup
 
-`lint`: runs linting rules
+`npm install`: installs project dependencies
 
-`test`: runs all tests found in the 'src' folder
+`npm run lint`: runs linting rules
 
-`start`: run server locally
+`npm test`: runs tests
 
-## Running the website in a Docker container
+`npm run start`: runs server locally
+
+## Running the API in a Docker container
 
 `docker build . -api`
 
