@@ -10,9 +10,9 @@ const jsonParser = bodyParser.json();
 
 app.use(cors());
 
-app.get('/currencies', (req, res) => requestHandlers.handleGetCurrencies(req, res));
+app.get('/conversions/currencies', (req, res) => requestHandlers.handleGetCurrencies(req, res));
 
-app.post('/currencies/convert', jsonParser, (req, res) => requestHandlers.handlePostConvert(req, res));
+app.post('/conversions', jsonParser, (req, res) => requestHandlers.handlePostConvert(req, res));
 
 const server = app.listen(port, () => console.log(`Server listening on port ${port}`));
 

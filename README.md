@@ -4,7 +4,7 @@ NodeJS API for currency conversion.
 
 ## Endpoints
 
-### GET /currencies
+### GET /conversions/currencies
 Returns a list of available currencies.
 
 Response:
@@ -14,7 +14,7 @@ Response:
 ```json
 ["AED", "AFN", "ALL"]
 ```
-### POST /currencies/convert
+### POST /conversions
 Converts the provided value to the desired currency.
 
 Request:
@@ -31,7 +31,7 @@ Response:
 
 ```json
 {
-  "convertedValue": 492.93
+  "convertedValue": 0.04
 }
 ```
 
