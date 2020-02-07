@@ -22,7 +22,7 @@ Request:
 {
   "from": "EUR",
   "to": "YEN",
-  "value": 5
+  "value": 1
 }
 ```
 
@@ -31,7 +31,7 @@ Response:
 
 ```json
 {
-  "convertedValue": 0.04
+  "convertedValue": 121.07
 }
 ```
 

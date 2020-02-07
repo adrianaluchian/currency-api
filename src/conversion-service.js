@@ -9,11 +9,10 @@ function isSupportedCurrency (currency) {
 }
 
 function convert ({ from, to, value } = {}) {
-  const rateSourceCurrency = conversionRateCatalog.rates[from] || 0;
-  const rateDestinationCurrency = conversionRateCatalog.rates[to] || 0;
+  const fromRate = conversionRateCatalog.rates[from] || 0;
+  const toRate = conversionRateCatalog.rates[to] || 0;
 
-  const valueInBaseCurrency = value * rateSourceCurrency;
-  const convertedValue = valueInBaseCurrency * rateDestinationCurrency;
+  const convertedValue = (value / fromRate) * toRate;
 
   if (isNaN(convertedValue) || !isFinite(convertedValue)) {
     return 0;

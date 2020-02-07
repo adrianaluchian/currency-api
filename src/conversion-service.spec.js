@@ -5,7 +5,8 @@ jest.mock('./conversion-rate-catalog.json', () => ({
   rates: {
     'USD': 1,
     'EUR': 0.906997,
-    'YEN': 0.0092
+    'YEN': 109.81,
+    'RON': 4.336
   }
 }), { virtual: true });
 
@@ -16,7 +17,7 @@ describe('conversion-service', () => {
     let expectedResult;
 
     beforeEach(() => {
-      expectedResult = ['USD', 'EUR', 'YEN'];
+      expectedResult = ['USD', 'EUR', 'YEN', 'RON'];
       result = sut.getCurrencies();
     });
 
@@ -27,13 +28,14 @@ describe('conversion-service', () => {
 
   describe('when convert is called', () => {
     const testData = [
-      { from: '', to: 'USD', value: 5, expectedResult: 0 },
-      { from: 'EUR', to: '', value: 5, expectedResult: 0 },
+      { from: '', to: 'USD', value: 1, expectedResult: 0 },
+      { from: 'EUR', to: '', value: 1, expectedResult: 0 },
       { from: 'EUR', to: 'USD', value: null, expectedResult: 0 },
-      { from: 'USD', to: 'USD', value: 5, expectedResult: 5 },
-      { from: 'EUR', to: 'USD', value: 5, expectedResult: 4.53 },
-      { from: 'USD', to: 'EUR', value: 5, expectedResult: 4.53 },
-      { from: 'EUR', to: 'YEN', value: 5, expectedResult: 0.04 },
+      { from: 'USD', to: 'USD', value: 1, expectedResult: 1 },
+      { from: 'EUR', to: 'USD', value: 1, expectedResult: 1.10 },
+      { from: 'USD', to: 'EUR', value: 1, expectedResult: 0.91 },
+      { from: 'EUR', to: 'YEN', value: 1, expectedResult: 121.07 },
+      { from: 'EUR', to: 'RON', value: 1, expectedResult: 4.78 }
     ];
 
     testData.forEach(({ from, to, value, expectedResult }) => {
