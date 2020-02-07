@@ -32,8 +32,8 @@ describe('conversion-service', () => {
       { from: 'EUR', to: 'USD', value: null, expectedResult: 0 },
       { from: 'USD', to: 'USD', value: 5, expectedResult: 5 },
       { from: 'EUR', to: 'USD', value: 5, expectedResult: 4.53 },
-      { from: 'USD', to: 'EUR', value: 5, expectedResult: 5.51 },
-      { from: 'EUR', to: 'YEN', value: 5, expectedResult: 492.93 },
+      { from: 'USD', to: 'EUR', value: 5, expectedResult: 4.53 },
+      { from: 'EUR', to: 'YEN', value: 5, expectedResult: 0.04 },
     ];
 
     testData.forEach(({ from, to, value, expectedResult }) => {

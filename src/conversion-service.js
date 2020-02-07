@@ -13,7 +13,7 @@ function convert ({ from, to, value } = {}) {
   const rateDestinationCurrency = conversionRateCatalog.rates[to] || 0;
 
   const valueInBaseCurrency = value * rateSourceCurrency;
-  const convertedValue = valueInBaseCurrency / rateDestinationCurrency;
+  const convertedValue = valueInBaseCurrency * rateDestinationCurrency;
 
   if (isNaN(convertedValue) || !isFinite(convertedValue)) {
     return 0;
